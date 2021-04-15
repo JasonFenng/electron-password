@@ -1,0 +1,32 @@
+{
+  "name": "yufu-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/mainProcess/main.js",
+  "scripts": {
+    "start": "electron .",
+    "tbinstall": "ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ puppeteer_download_host=https://npm.taobao.org/mirrors/ && npm i --registry=https://registry.npm.taobao.org",
+    "pack:mac": "cross-env npm_config_electron_mirror=https://npm.taobao.org/mirrors/electron/ electron-builder --mac",
+    "pack:win": "cross-env npm_config_electron_mirror=https://npm.taobao.org/mirrors/electron/ electron-builder --win --ia32",
+    "test": "npm run start -- 'yufu-desktop-client:?action=MODIFY_PW&userId=us-3c3ebd5d709047b8900a815baec2c9a9&appId=ai-e1443eb6d31a4a71917bdfeac615f72a&appName=C%2FS%E5%AE%A2%E6%88%B7%E7%AB%AF&appPath=&macOSScript=tell%20application%20%22QQ%22%0A%09activate%0A%09tell%20application%20%22System%20Events%22%0A%09%09tell%20application%20process%20%22QQ%22%0A%09%09%09entire%20contents%0A%09%09%09set%20value%20of%20text%20field%201%20of%20window%20%22Window%22%20of%20application%20process%20%22QQ%22%20of%20application%20%22System%20Events%22%20to%20%22%7BUSERNAME%7D%22%0A%09%09%09set%20value%20of%20text%20field%202%20of%20window%20%22Window%22%20of%20application%20process%20%22QQ%22%20of%20application%20%22System%20Events%22%20to%20%22%7BPASSWORD%7D%22%0A%09%09%09keystroke%20return%0A%09%09end%20tell%0A%09end%20tell%0Aend%20tell&keySequence=%7BUSERNAME%7D%7BTAB%7D%7BPASSWORD%7D%7BENTER%7D'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "^9.1.0",
+    "electron-builder": "^22.7.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "ajv": "^6.12.3",
+    "applescript": "^1.0.0",
+    "electron-log": "^4.2.2",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.19",
+    "qs": "^6.9.4",
+    "rimraf": "^3.0.2",
+    "shortid": "^2.2.15"
+  }
+}

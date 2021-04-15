@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' 'unsafe-inline' 'unsafe-eval'"
+    />
+    <title>玉符客户端</title>
+    <link rel="stylesheet" href="src/style/index.css" />
+  </head>
+  <body>
+    <h1 class="title">
+      玉符客户端
+    </h1>
+    <div class="body" id="portal">
+      <!-- loading -->
+      <div class="loading">
+        <div class="ant-spin ant-spin-spinning">
+          <span class="ant-spin-dot ant-spin-dot-spin">
+            <i class="ant-spin-dot-item"></i>
+            <i class="ant-spin-dot-item"></i>
+            <i class="ant-spin-dot-item"></i>
+            <i class="ant-spin-dot-item"></i>
+          </span>
+        </div>
+      </div>
+      <!-- login 页面 -->
+      <div id="login" class="form-wrapper" style="display: none;">
+        <div class="form-body">
+          <p>请填写玉符客户端程序的访问口令</p>
+          <form
+            id="login-form"
+            enctype="multipart/form-data"
+            action="javascript: void(0)"
+          >
+            <div class="form-item">
+              <label for="login-password">玉符客户端程序访问指令</label>
+              <span class="form-item-input">
+                <input
+                  id="login-password"
+                  type="password"
+                  name="loginPassword"
+                  class="input"
+                />
+                <span class="error-explain"></span>
+              </span>
+            </div>
+          </form>
+        </div>
+        <div class="form-footer">
+          <button id="login-button-cancel" class="btn default-btn">
+            取消
+          </button>
+          <button id="login-button-submit" class="btn primary-btn">
+            确定
+          </button>
+        </div>
+      </div>
+      <!-- app 配置页面 -->
+      <div id="app" class="form-wrapper" style="display: none;">
+        <div class="form-body">
+          <form
+            id="app-form"
+            enctype="multipart/form-data"
+            action="javascript: void(0)"
+          >
+            <div class="form-item">
+              <label for="app-name">应用名称</label>
+              <input
+                id="app-name"
+                name="appName"
+                class="input fake-input"
+                disabled
+              />
+            </div>
+            <div class="win-platform" style="display: none;">
+              <div class="form-item">
+                <label for="app-deep-link">应用唤起地址</label>
+                <div class="form-item-input upload-file-field">
+                  <input id="app-deep-link" name="path" class="input" />
+                  <input type="file" id="upload-file" />
+                  <button id="upload-file-btn" class="btn">浏览</button>
+                  <span class="error-explain">应用唤起地址不能为空</span>
+                </div>
+              </div>
+              <div class="form-item">
+                <label for="app-type-config">客户端登录配置</label>
+                <span class="form-item-input">
+                  <input
+                    id="app-type-config"
+                    name="keySequence"
+                    class="input"
+                    disabled
+                  />
+                  <span class="error-explain">客户端登录配置不能为空</span>
+                </span>
+              </div>
+            </div>
+            <div class="mac-platform" style="display: none;">
+              <div class="form-item baseline">
+                <label for="app-script-config">唤起脚本</label>
+                <span class="form-item-input">
+                  <textarea
+                    id="app-script-config"
+                    name="appleScript"
+                    class="input textarea"
+                    disabled
+                  >
+                  </textarea>
+                  <span class="error-explain">唤起脚本不能为空</span>
+                </span>
+              </div>
+            </div>
+            <div class="form-item">
+              <label for="app-username">登录用户名</label>
+              <span class="form-item-input">
+                <input id="app-username" name="username" class="input" />
+                <span class="error-explain">用户名不能为空</span>
+              </span>
+            </div>
+            <div class="form-item">
+              <label for="app-password">登录密码</label>
+              <span class="form-item-input">
+                <input
+                  id="app-password"
+                  type="password"
+                  name="password"
+                  class="input"
+                />
+                <span class="error-explain">登录密码不能为空</span>
+              </span>
+            </div>
+          </form>
+        </div>
+        <div class="form-footer">
+          <button id="app-button-cancel" class="btn default-btn">
+            取消
+          </button>
+          <button id="app-button-submit" class="btn primary-btn">
+            确定
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="src/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="src/renderProcess/render.js"></script>
+  </body>
+</html>

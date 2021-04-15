@@ -1,0 +1,19 @@
+appId: com.yufuid.yufu-desktop-client
+protocols:
+  name: 玉符客户端,
+  schemes:
+    - yufu-desktop-client
+
+electronDownload:
+  mirror: https://npm.taobao.org/mirrors/electron/
+
+mac:
+  category: public.app-category.Reference
+  target: dmg
+win:
+  target:
+    - nsis
+    - zip
+  icon: ./build/icon.ico
+nsis:
+  deleteAppDataOnUninstall: true
